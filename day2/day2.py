@@ -7,14 +7,14 @@ def process(input, cube_cnt):
     game_sum = 0
     power_sum = 0
     for game in input:
-        curr_game = int(game[game.index('e')+1 : game.index(':')])
+        curr_game = int(game[game.index(' ') : game.index(':')])
         max_cube_cnt = {'red':0, 'green':0, 'blue':0}
         isValid = True
         for rnd in game.split(';'):
             rnd_cnt = {'red':0, 'green':0, 'blue':0}
             for k in rnd_cnt.keys():
                 if k in rnd:
-                    rnd_cnt[k] = rnd_cnt[k] + int(rnd[rnd.index(k)-3 : rnd.index(k)-1])
+                    rnd_cnt[k] += int(rnd[rnd.index(k)-3 : rnd.index(k)-1])
                     if rnd_cnt[k] > max_cube_cnt[k]:
                         max_cube_cnt[k] = rnd_cnt[k]
                     if rnd_cnt[k] > cube_cnt[k]:
