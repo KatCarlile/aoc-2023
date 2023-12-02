@@ -9,8 +9,8 @@ def process(input, valid_digits):
         for kv in valid_digits.items():
             if kv[1] in line:
                 line = line.replace(kv[1], kv[0]) 
-        nums = [int(c) for c in line if c.isdigit()]
-        sum += int(str(nums[0]) + str(nums[-1]))
+        nums = [c for c in line if c.isdigit()]
+        sum += int(nums[0] + nums[-1])
     return sum
 
 def main():
