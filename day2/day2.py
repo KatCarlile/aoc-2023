@@ -20,12 +20,8 @@ def process(input, cube_cnt):
                     if rnd_cnt[k] > cube_cnt[k]:
                         isValid = False
         if isValid:
-            # print("Adding game " + str(curr_game))
             game_sum += curr_game
         power_sum += max_cube_cnt['red'] * max_cube_cnt['green'] * max_cube_cnt['blue']
-        # print("Game " + str(curr_game) + " played with " + str(max_cube_cnt['red'])
-        # + " red, " + str(max_cube_cnt['green']) + " green, " + str(max_cube_cnt['blue']) + " blue",
-        # "power is " + str(max_cube_cnt['red'] * max_cube_cnt['green'] * max_cube_cnt['blue']))
     print("Power sum is " + str(power_sum))
     print("Game sum is " + str(game_sum))
 
@@ -34,7 +30,6 @@ def main():
     input_dir = r'inputs\input.txt'
     input = read_input(input_dir)
     process(input, cube_cnt)
-    # print(input)
 
 if __name__ == "__main__":
     main()
